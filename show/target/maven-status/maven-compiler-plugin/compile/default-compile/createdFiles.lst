@@ -1,0 +1,11 @@
+show\PolicyHandler.class
+show\Application.class
+show\Show.class
+show\config\kafka\KafkaProcessor.class
+show\Booked.class
+show\AbstractEvent.class
+show\TicketQtyChanged.class
+show\AbstractEvent$1.class
+show\BookingCancelled.class
+show\ShowRepository.class
+show\ShowController.class

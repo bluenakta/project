@@ -25,9 +25,11 @@ public class Booking {
 
     @PostUpdate
     public void onPostUpdate(){
-        BookingCancelled bookingCanceled = new BookingCancelled();
-        BeanUtils.copyProperties(this, bookingCanceled);
-        bookingCanceled.publishAfterCommit();
+        if( "BookingCancelled".equals(this.getBookStatus()) ) {
+            BookingCancelled bookingCanceled = new BookingCancelled();
+            BeanUtils.copyProperties(this, bookingCanceled);
+            bookingCanceled.publishAfterCommit();
+        }
     }
 
     public String getShowName() {

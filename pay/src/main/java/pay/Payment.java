@@ -29,7 +29,7 @@ public class Payment {
     	
         Payed payed = new Payed();
         BeanUtils.copyProperties(this, payed);
-//        payed.setStatus("PAYED"); ??
+        payed.setStatus("Payed");
         payed.publishAfterCommit();
         
     }

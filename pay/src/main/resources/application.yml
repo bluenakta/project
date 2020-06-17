@@ -57,10 +57,12 @@ spring:
                 value:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
       bindings:
-        event-in:
-          group: pay
-          destination: show
+        event-in1:
+          destination: booked
           contentType: application/json
-        event-out:
-          destination: show
+        event-in2:
+          destination: bookingCancelled
+          contentType: application/json
+        event-out1:
+          destination: payed
           contentType: application/json

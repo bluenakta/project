@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: booking
-          image: 271153858532.dkr.ecr.ap-northeast-2.amazonaws.com/booking:latest
+          image: 271153858532.dkr.ecr.ap-northeast-2.amazonaws.com/booking:v1
           ports:
             - containerPort: 8080
           readinessProbe:

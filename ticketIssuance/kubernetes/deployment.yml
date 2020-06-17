@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: ticketIssuance
-          image: username/ticketIssuance:latest
+          image: 271153858532.dkr.ecr.ap-northeast-2.amazonaws.com/ticketIssuance:latest
           ports:
             - containerPort: 8080
           readinessProbe:

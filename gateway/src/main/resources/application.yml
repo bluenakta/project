@@ -1,0 +1,82 @@
+server:
+  port: 8088
+
+---
+
+spring:
+  profiles: default
+  cloud:
+    gateway:
+      routes:
+        - id: booking
+          uri: http://localhost:8081
+          predicates:
+            - Path=/bookings/** 
+        - id: show
+          uri: http://localhost:8082
+          predicates:
+            - Path=/shows/** 
+        - id: pay
+          uri: http://localhost:8083
+          predicates:
+            - Path=/payments/** 
+        - id: ticketIssuance
+          uri: http://localhost:8084
+          predicates:
+            - Path=/ticketIssuances/** 
+        - id: dashboard
+          uri: http://localhost:8085
+          predicates:
+            - Path= /showStatuses/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+
+---
+
+spring:
+  profiles: docker
+  cloud:
+    gateway:
+      routes:
+        - id: booking
+          uri: http://booking:8080
+          predicates:
+            - Path=/bookings/** 
+        - id: show
+          uri: http://show:8080
+          predicates:
+            - Path=/shows/** 
+        - id: pay
+          uri: http://pay:8080
+          predicates:
+            - Path=/payments/** 
+        - id: ticketIssuance
+          uri: http://ticketIssuance:8080
+          predicates:
+            - Path=/ticketIssuances/** 
+        - id: dashboard
+          uri: http://dashboard:8080
+          predicates:
+            - Path= /showStatuses/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+server:
+  port: 8080

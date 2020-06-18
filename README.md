@@ -1,3 +1,4 @@
+ad6762bb91ed346bc9d6d4f867c4ec17-1084540014.ap-northeast-2.elb.amazonaws.com:8080/shows
 
 * 예약 -> 발권
 
